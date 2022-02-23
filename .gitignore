@@ -183,5 +183,8 @@ $RECYCLE.BIN/
 *.lnk
 
 /.vscode
+/venv
+*.xlsx
+*.ini
 
 # End of https://www.toptal.com/developers/gitignore/api/python,windows
