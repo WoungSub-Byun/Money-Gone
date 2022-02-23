@@ -21,8 +21,8 @@ def load_dataset():
     config.sections()
 
     google_path = "https://drive.google.com/uc?id="
-    file_id = config["link"]["file_id"]
-    output_name = config["link"]["file_name"]
+    file_id = config["file"]["id"]
+    output_name = config["file"]["name"]
 
     gdown.download(google_path + file_id, output_name, quiet=True)
 
