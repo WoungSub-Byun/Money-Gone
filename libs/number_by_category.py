@@ -1,0 +1,31 @@
+# 5. 카테고리별 소비 건수
+def number_by_category(self):
+    number_by_category = dict()
+
+    for x in categories:
+        number_by_category[x] = 0
+
+    for _, data in self.self.df.iterrows():
+        number_by_category[data["Category"]] += 1
+
+    df_number_of_category = pd.DataFrame(list(number_by_category.items()))
+
+    x = np.arange(len(df_number_of_category[1]))
+
+    plt.bar(x, df_number_of_category[1])
+    plt.xticks(x, df_number_of_category[0])
+    # 막대 위에 값 표시
+    for rect in plot:
+        height = rect.get_height()
+        plt.text(
+            rect.get_x() + rect.get_width() / 2.0,
+            height,
+            "%d" % height,
+            ha="center",
+            va="bottom",
+            size=12,
+        )
+    plt.title("Number of Monthly Consumption by Category")
+    plt.xlabel("Category")
+    plt.ylabel("Amount")
+    plt.show()
