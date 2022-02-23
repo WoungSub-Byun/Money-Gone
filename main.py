@@ -2,7 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
-import time
+import gdown
+import configparser
 import mpld3
 
 # 한글 폰트 설치
@@ -15,9 +16,19 @@ import mpld3
 
 
 def load_dataset():
+    config = configparser.ConfigParser()
+    config.read("./config.ini", encoding="utf-8")
+    config.sections()
+
+    google_path = "https://drive.google.com/uc?id="
+    file_id = config["link"]["file_id"]
+    output_name = config["link"]["file_name"]
+
+    gdown.download(google_path + file_id, output_name, quiet=True)
+
     names = ["Date", "Category", "Where", "Reason", "Price(\)"]
     org_dataset = pd.read_excel(
-        "/content/drive/MyDrive/가계부/웅섭이의 소비생활 파헤치기.xlsx",
+        output_name,
         sheet_name=0,
         header=3,
         names=names,
@@ -31,27 +42,12 @@ def load_dataset():
     return df
 
 
-def main():
+def boot():
     # matplotlib 한글 폰트 적용
     plt.rc("font", family="NanumBarunGothic")
 
     df = load_dataset()
+    print(df)
 
 
-class Main:
-    def __init__(self) -> None:
-
-        # matplotlib 한글 폰트 적용
-        plt.rc("font", family="NanumBarunGothic")
-        self.df = self.load_dataset()
-
-    # # 13. 이번달 주별 소비액
-
-    # today = datetime.today()
-
-    # current_month_week = datetime.today().weekday()
-
-    # for _, data in self.df.iterrows():
-    #   if current_month in data['Date'] and datetime.strptime(data['Date'], "%Y-%m-%d") <= today:
-    #     tmp_date = datetime.strptime(data['Date'], "%Y-%m-%d")
-    #     if tmp_date.weekday()
+boot()
