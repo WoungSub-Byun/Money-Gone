@@ -1,6 +1,11 @@
-# 10. 최근 30일간 일별 소비액
-def current_daily_consumption(self):
-    timestamps = list(set(self.df["Date"]))
+from datetime import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+
+# 최근 30일간 일별 소비액
+def current_daily_consumption(df):
+    timestamps = list(set(df["Date"]))
     today = datetime.now()
 
     daily_consume = dict()
@@ -8,7 +13,7 @@ def current_daily_consumption(self):
     for day in timestamps:
         daily_consume[day] = 0
 
-    for _, value in self.df.iterrows():
+    for _, value in df.iterrows():
         if (
             value["Price(\)"] < 0
             and (today - datetime.strptime(value["Date"], "%Y-%m-%d")).days < 30
