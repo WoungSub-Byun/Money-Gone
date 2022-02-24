@@ -1,8 +1,8 @@
-# 2. 총 소비액
-def total_consumption(self):
+# 총 소비액
+def total_consumption(df):
 
     total_consumption = 0
-    for consumption in self.df["Price(\)"]:
+    for consumption in df["Price(\)"]:
         if consumption < 0:
             total_consumption += consumption
 

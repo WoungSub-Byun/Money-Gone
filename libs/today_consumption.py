@@ -1,9 +1,11 @@
-# 8. 오늘 총 소비액
-def today_consumption(self):
+from datetime import datetime
+
+# 오늘 총 소비액
+def today_consumption(df):
     today = datetime.now().strftime("%Y-%m-%d")
     today_consumption = 0
     today_income = 0
-    for _, value in self.df.iterrows():
+    for _, value in df.iterrows():
         if value["Date"] == today:
             if value["Price(\)"] < 0:
                 today_consumption += value["Price(\)"]

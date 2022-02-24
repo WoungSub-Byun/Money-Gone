@@ -1,18 +1,22 @@
-# 5. 카테고리별 소비 건수
-def number_by_category(self):
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+# 카테고리별 소비 건수
+def number_by_category(df):
     number_by_category = dict()
 
     for x in categories:
         number_by_category[x] = 0
 
-    for _, data in self.self.df.iterrows():
+    for _, data in df.iterrows():
         number_by_category[data["Category"]] += 1
 
     df_number_of_category = pd.DataFrame(list(number_by_category.items()))
 
     x = np.arange(len(df_number_of_category[1]))
 
-    plt.bar(x, df_number_of_category[1])
+    plot = plt.bar(x, df_number_of_category[1])
     plt.xticks(x, df_number_of_category[0])
     # 막대 위에 값 표시
     for rect in plot:

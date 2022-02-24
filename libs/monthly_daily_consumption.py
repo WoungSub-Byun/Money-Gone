@@ -1,13 +1,18 @@
-# 9. 이번달 일별 소비액
-def monthly_daily_consumption(self):
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+from datetime import datetime
 
-    timestamps = list(set(self.df["Date"]))
+# 9. 이번달 일별 소비액
+def monthly_daily_consumption(df):
+
+    timestamps = list(set(df["Date"]))
     current_month = datetime.now().strftime("%Y-%m")
     daily_consume = dict()
     for day in timestamps:
         daily_consume[day] = 0
 
-    for _, value in self.df.iterrows():
+    for _, value in df.iterrows():
         if value["Price(\)"] < 0 and current_month in value["Date"]:
             daily_consume[value["Date"]] += value["Price(\)"] * -1
 

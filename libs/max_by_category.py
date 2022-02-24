@@ -1,11 +1,13 @@
-# 6. 각 카테고리별 최대 소비액 데이터
-def max_by_category(self):
+import pandas as pd
+
+# 각 카테고리별 최대 소비액 데이터
+def max_by_category(df):
     max_by_category = dict()
 
     for x in categories:
         max_by_category[x] = 0
 
-    for _, data in self.df.iterrows():
+    for _, data in df.iterrows():
         if (
             data["Price(\)"] < 0
             and max_by_category[data["Category"]] > data["Price(\)"]

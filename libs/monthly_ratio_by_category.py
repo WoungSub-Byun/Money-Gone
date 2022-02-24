@@ -1,16 +1,20 @@
-# 12. 이번달 카테고리별 소비 비율
-def monthly_ratio_by_category(self):
+import matplotlib.pyplot as plt
+from datetime import datetime
+from total_consumption import total_consumption
+
+# 이번달 카테고리별 소비 비율
+def monthly_ratio_by_category(df):
 
     current_month = datetime.now().strftime("%Y-%m")
 
-    categories = list(set(self.df["Category"]))
+    categories = list(set(df["Category"]))
 
     consumption_by_category = dict()
 
     for x in categories:
         consumption_by_category[x] = 0
 
-    for _, data in self.df.iterrows():
+    for _, data in df.iterrows():
         if data["Price(\)"] < 0 and current_month in data["Date"]:
             consumption_by_category[data["Category"]] += data["Price(\)"] * -1
 

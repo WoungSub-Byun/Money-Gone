@@ -1,6 +1,10 @@
-# 4. 카테고리별 소비 비율
-def ratio_by_category(self):
-    listed_result = list(self.consumption_by_category.items())
+from consumption_by_category import consumption_by_category
+from total_consumption import total_consumption
+import matplotlib.pyplot as plt
+
+#  카테고리별 소비 비율
+def ratio_by_category(df):
+    listed_result = list(consumption_by_category.items())
 
     ratio_by_category = dict()
     for data in listed_result:

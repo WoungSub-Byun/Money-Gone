@@ -1,12 +1,16 @@
-# 1. 일별 소비액
-def daily_consumption(self):
-    timestamps = list(set(self.df["Date"]))
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 일별 소비액
+def daily_consumption(df):
+    timestamps = list(set(df["Date"]))
 
     daily_consume = dict()
     for day in timestamps:
         daily_consume[day] = 0
 
-    for _, value in self.self.df.iterrows():
+    for _, value in df.iterrows():
         if value["Price(\)"] < 0:
             daily_consume[value["Date"]] += value["Price(\)"] * -1
 

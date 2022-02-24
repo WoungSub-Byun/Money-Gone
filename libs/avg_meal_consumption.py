@@ -1,5 +1,10 @@
-# 7. 아침, 점심, 저녁 평균 소비 금액
-def avg_meal_consumption(self):
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# 아침, 점심, 저녁 평균 소비 금액
+def avg_meal_consumption(df):
     meal_category = ["breakfast", "lunch", "dinner"]
 
     meal_category_sum = dict()
@@ -9,7 +14,7 @@ def avg_meal_consumption(self):
         meal_category_cnt[meal] = 0
 
     # 데이터 셋 중에 category가 식비 인 것 and 사용처가 아침식사, 점심식사, 저녁식사 셋 중 하나라도 '포함되는' 문자열일 경우 해당 문자열이 key인 내용에 추가, 개수 카운트
-    for _, data in self.df.iterrows():
+    for _, data in df.iterrows():
         if data["Category"] == "식비":
             if "아침식사" in data["Reason"]:
                 meal_category_sum["breakfast"] += data["Price(\)"]
