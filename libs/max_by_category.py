@@ -1,9 +1,10 @@
 import pandas as pd
 
+
 # 각 카테고리별 최대 소비액 데이터
 def max_by_category(df):
     max_by_category = dict()
-
+    categories = list(set(df["Category"]))
     for x in categories:
         max_by_category[x] = 0
 

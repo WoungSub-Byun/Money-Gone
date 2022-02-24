@@ -27,7 +27,7 @@ def avg_meal_consumption(df):
                 meal_category_cnt["dinner"] += 1
 
     meal_category_avg = dict()
-    for key, value in meal_category_sum.items():
+    for key, _ in meal_category_sum.items():
         if meal_category_cnt[key] == 0:
             continue
         meal_category_avg[key] = round(

@@ -25,12 +25,12 @@ def current_daily_consumption(df):
     # 일자별로 정렬하기
     df_dc = df_daily_consumption.sort_values(by=df_daily_consumption.columns[0])
 
-    x = np.arange(len(df_daily_consumption[1]))
+    x = np.arange(len(df_dc[1]))
 
     f = plt.figure(figsize=(20, 5))
 
-    plot = plt.bar(x, df_daily_consumption[1])
-    plt.xticks(x, df_daily_consumption[0])
+    plot = plt.bar(x, df_dc[1])
+    plt.xticks(x, df_dc[0])
 
     # 막대 위에 값 표시
     for rect in plot:

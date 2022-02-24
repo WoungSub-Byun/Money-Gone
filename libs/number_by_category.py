@@ -5,7 +5,7 @@ import numpy as np
 # 카테고리별 소비 건수
 def number_by_category(df):
     number_by_category = dict()
-
+    categories = list(set(df["Category"]))
     for x in categories:
         number_by_category[x] = 0
 
