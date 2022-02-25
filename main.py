@@ -1,10 +1,11 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-from datetime import datetime
 import gdown
 import configparser
-import mpld3
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from functions import *
+from export_html import export_html
+import os
 
 # 한글 폰트 설치
 # !sudo apt-get install -y fonts-nanum
@@ -47,7 +48,23 @@ def boot():
     plt.rc("font", family="NanumBarunGothic")
 
     df = load_dataset()
-    print(df)
+    file_number = 0
+    dir = "functions"
+    for path in os.listdir(dir):
+        if os.path.isfile(os.path.join(dir, path)):
+            file_number += 1
+
+    consumption_by_category(df)
+    current_daily_consumption(df)
+    daily_consumption(df)
+    max_by_category(df)
+    monthly_consumption(df)
+    monthly_daily_consumption(df)
+    monthly_ratio_by_category(df)
+    number_by_category(df)
+    ratio_by_category(df)
+    today_consumption(df)
+    total_consumption(df)
 
 
 boot()
