@@ -36,4 +36,4 @@ def consumption_by_category(df):
     plt.title("Monthly consumption by category")
     plt.xlabel("Category")
     plt.ylabel("Price of Consumption")
-    plt.show()
+    return f

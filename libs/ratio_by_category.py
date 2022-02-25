@@ -16,4 +16,5 @@ def ratio_by_category(df):
     f = plt.figure(figsize=(25, 7))
     plt.pie(ratio, labels=labels, autopct="%.1f%%")
     plt.title("Consumption ratio by category.")
-    plt.show()
+
+    return f

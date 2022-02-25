@@ -15,7 +15,7 @@ def number_by_category(df):
     df_number_of_category = pd.DataFrame(list(number_by_category.items()))
 
     x = np.arange(len(df_number_of_category[1]))
-
+    f = plt.figure(figsize=(20, 5))
     plot = plt.bar(x, df_number_of_category[1])
     plt.xticks(x, df_number_of_category[0])
     # 막대 위에 값 표시
@@ -32,4 +32,5 @@ def number_by_category(df):
     plt.title("Number of Monthly Consumption by Category")
     plt.xlabel("Category")
     plt.ylabel("Amount")
-    plt.show()
+
+    return f

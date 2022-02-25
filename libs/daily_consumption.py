@@ -40,4 +40,5 @@ def daily_consumption(df):
     plt.title("Daily consumption trend.")
     plt.xlabel("Date")
     plt.ylabel("Daily Consumption")
-    plt.show()
+
+    return f

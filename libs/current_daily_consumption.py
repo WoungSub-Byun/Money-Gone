@@ -46,6 +46,4 @@ def current_daily_consumption(df):
     plt.title("Daily consumption trend On Current 30days ({})".format(today))
     plt.xlabel("Date")
     plt.ylabel("Daily Consumption")
-    plt.show()
-    # mpld로 html 출력
-    # mpld3.fig_to_html(f, figid='THIS_IS_FIGID')
+    return f
