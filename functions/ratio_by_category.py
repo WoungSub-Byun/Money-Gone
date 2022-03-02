@@ -1,5 +1,5 @@
-from consumption_by_category import consumption_by_category
-from total_consumption import total_consumption
+from .consumption_by_category import consumption_by_category
+from .total_consumption import total_consumption
 import matplotlib.pyplot as plt
 
 #  카테고리별 소비 비율

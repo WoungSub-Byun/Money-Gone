@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 from datetime import datetime
-from total_consumption import total_consumption
+from .total_consumption import total_consumption
 
 # 이번달 카테고리별 소비 비율
 def monthly_ratio_by_category(df):

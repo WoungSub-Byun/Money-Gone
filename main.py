@@ -48,14 +48,10 @@ def boot():
     plt.rc("font", family="NanumBarunGothic")
 
     df = load_dataset()
-    file_number = 0
-    dir = "functions"
-    for path in os.listdir(dir):
-        if os.path.isfile(os.path.join(dir, path)):
-            file_number += 1
 
-    consumption_by_category(df)
-    current_daily_consumption(df)
+    export_html(consumption_by_category(df), "consumption_by_category")
+    export_html(current_daily_consumption(df), "consumption_by_category")
+    export_html(daily_consumption(df), "daily_consumption")
     daily_consumption(df)
     max_by_category(df)
     monthly_consumption(df)

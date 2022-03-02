@@ -20,7 +20,7 @@ def consumption_by_category(df):
     x = np.arange(len(df_monthly_consumption_by_category[1]))
 
     f = plt.figure(figsize=(20, 5))
-    plt.bar(x, df_monthly_consumption_by_category[1])
+    plot = plt.bar(x, df_monthly_consumption_by_category[1])
     plt.xticks(x, df_monthly_consumption_by_category[0])
     # 막대 위에 값 표시
     for rect in plot:
