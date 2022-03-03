@@ -33,4 +33,4 @@ def number_by_category(df):
     plt.title("Number of Monthly Consumption by Category")
     plt.xlabel("Category")
     plt.ylabel("Amount")
-    export_html(f, "카테고리별 소비 건수")
+    export_html(f, __name__)

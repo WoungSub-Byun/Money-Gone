@@ -50,17 +50,18 @@ def boot():
     df = load_dataset()
 
     # avg_meal_consumption(df)
+    # max_by_category(df)
+    # monthly_consumption(df)
+    # today_consumption(df)
+    # total_consumption(df)
+
     consumption_by_category(df)
     current_daily_consumption(df)
     daily_consumption(df)
-    # max_by_category(df)
-    # monthly_consumption(df)
     monthly_daily_consumption(df)
     monthly_ratio_by_category(df)
     number_by_category(df)
     ratio_by_category(df)
-    # today_consumption(df)
-    # total_consumption(df)
 
 
 boot()

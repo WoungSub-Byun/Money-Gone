@@ -23,11 +23,14 @@ def monthly_ratio_by_category(df):
 
     ratio_by_category = dict()
     for data in listed_result:
-        ratio_by_category[data[0]] = round((data[1] * -1) / total_consumption, 2)
+        ratio_by_category[data[0]] = round((data[1] * -1) / total_consumption(df), 2)
 
     ratio = list(ratio_by_category.values())
     labels = list(ratio_by_category.keys())
+    if sum(ratio) == 0:
+        print("There's no monthly data")
+        return
     f = plt.figure(figsize=(30, 8))
     plt.pie(ratio, labels=labels, autopct="%.1f%%")
     plt.title("Consumption ratio by category on Current Month.")
-    export_html(f, "이번달 카테고리별 소비 비율")
+    export_html(f, __name__)

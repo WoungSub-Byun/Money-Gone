@@ -6,4 +6,5 @@ def total_consumption(df):
         if consumption < 0:
             total_consumption += consumption
 
-    print("총 소비액(원): {}원".format(total_consumption))
+    # print("총 소비액(원): {}원".format(total_consumption))
+    return total_consumption

@@ -19,4 +19,4 @@ def max_by_category(df):
     categorical_max_df = pd.DataFrame(list(max_by_category.items()), columns=colnames)
     categorical_max_df.set_index("Category", inplace=True)
     print("# Maximum consumption for each category.")
-    export_html(categorical_max_df, "각 카테고리별 최대 소비액 데이터")
+    export_html(categorical_max_df, __name__)

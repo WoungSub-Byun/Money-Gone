@@ -41,4 +41,4 @@ def daily_consumption(df):
     plt.title("Daily consumption trend.")
     plt.xlabel("Date")
     plt.ylabel("Daily Consumption")
-    export_html(f, "일별 소비액")
+    export_html(f, __name__)

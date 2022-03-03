@@ -47,4 +47,4 @@ def current_daily_consumption(df):
     plt.title("Daily consumption trend On Current 30days ({})".format(today))
     plt.xlabel("Date")
     plt.ylabel("Daily Consumption")
-    export_html(f, "최근 30일간 일별 소비액")
+    export_html(f, __name__)
