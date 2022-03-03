@@ -1,5 +1,4 @@
 import mpld3
-from functions import *
 
 
 def export_html(plot, title):

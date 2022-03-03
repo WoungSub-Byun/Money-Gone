@@ -2,6 +2,7 @@ from datetime import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from .export_html import export_html
 
 # 최근 30일간 일별 소비액
 def current_daily_consumption(df):
@@ -46,4 +47,4 @@ def current_daily_consumption(df):
     plt.title("Daily consumption trend On Current 30days ({})".format(today))
     plt.xlabel("Date")
     plt.ylabel("Daily Consumption")
-    return f
+    export_html(f, "최근 30일간 일별 소비액")

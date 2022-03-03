@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from datetime import datetime
 from .total_consumption import total_consumption
+from .export_html import export_html
 
 # 이번달 카테고리별 소비 비율
 def monthly_ratio_by_category(df):
@@ -29,4 +30,4 @@ def monthly_ratio_by_category(df):
     f = plt.figure(figsize=(30, 8))
     plt.pie(ratio, labels=labels, autopct="%.1f%%")
     plt.title("Consumption ratio by category on Current Month.")
-    return f
+    export_html(f, "이번달 카테고리별 소비 비율")

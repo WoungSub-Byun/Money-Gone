@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+from .export_html import export_html
 
 
 # 아침, 점심, 저녁 평균 소비 금액
@@ -45,4 +46,4 @@ def avg_meal_consumption(df):
     colnames = ["Meals", "Avg Price(\)", "Number"]
     meal_category_avg_df = pd.DataFrame(result_list.T, columns=colnames)
     meal_category_avg_df.set_index("Meals", inplace=True)
-    return meal_category_avg_df
+    # export_html(meal_category_avg_df, "아침, 점심, 저녁 평균 소비 금액")

@@ -1,6 +1,7 @@
 from .consumption_by_category import consumption_by_category
 from .total_consumption import total_consumption
 import matplotlib.pyplot as plt
+from .export_html import export_html
 
 #  카테고리별 소비 비율
 def ratio_by_category(df):
@@ -16,5 +17,4 @@ def ratio_by_category(df):
     f = plt.figure(figsize=(25, 7))
     plt.pie(ratio, labels=labels, autopct="%.1f%%")
     plt.title("Consumption ratio by category.")
-
-    return f
+    export_html(f, "카테고리별 소비 비율")

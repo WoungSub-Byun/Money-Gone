@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from .export_html import export_html
 
 # 9. 이번달 일별 소비액
 def monthly_daily_consumption(df):
@@ -42,5 +43,4 @@ def monthly_daily_consumption(df):
     plt.title("Daily consumption trend ({})".format(current_month))
     plt.xlabel("Date")
     plt.ylabel("Daily Consumption")
-
-    return f
+    export_html(f, "이번달 일별 소비액")

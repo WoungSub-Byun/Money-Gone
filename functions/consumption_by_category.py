@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from .export_html import export_html
 
 # 카테고리별 소비액
 def consumption_by_category(df):
@@ -36,4 +37,4 @@ def consumption_by_category(df):
     plt.title("Monthly consumption by category")
     plt.xlabel("Category")
     plt.ylabel("Price of Consumption")
-    return f
+    export_html(f, "카테고리별 소비액")

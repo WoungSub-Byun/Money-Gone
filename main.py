@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from functions import *
-from export_html import export_html
+from functions.export_html import export_html
 import os
 
 # 한글 폰트 설치
@@ -49,18 +49,18 @@ def boot():
 
     df = load_dataset()
 
-    export_html(consumption_by_category(df), "consumption_by_category")
-    export_html(current_daily_consumption(df), "consumption_by_category")
-    export_html(daily_consumption(df), "daily_consumption")
+    # avg_meal_consumption(df)
+    consumption_by_category(df)
+    current_daily_consumption(df)
     daily_consumption(df)
-    max_by_category(df)
-    monthly_consumption(df)
+    # max_by_category(df)
+    # monthly_consumption(df)
     monthly_daily_consumption(df)
     monthly_ratio_by_category(df)
     number_by_category(df)
     ratio_by_category(df)
-    today_consumption(df)
-    total_consumption(df)
+    # today_consumption(df)
+    # total_consumption(df)
 
 
 boot()

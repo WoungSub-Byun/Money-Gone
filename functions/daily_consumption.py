@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from .export_html import export_html
 
 # 일별 소비액
 def daily_consumption(df):
@@ -40,5 +41,4 @@ def daily_consumption(df):
     plt.title("Daily consumption trend.")
     plt.xlabel("Date")
     plt.ylabel("Daily Consumption")
-
-    return f
+    export_html(f, "일별 소비액")
