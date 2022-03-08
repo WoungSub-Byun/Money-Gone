@@ -8,6 +8,6 @@ RUN mkdir -p /app/money_gone/data
 
 COPY . /app/money_gone/
 
-RUN pip install -r /app/money_gone/requirements.txt
+RUN pip install -r ./requirements.txt
 
 RUN python3 /app/money_gone/main.py
