@@ -8,7 +8,7 @@ def export_html(plot, title):
         "/app/money_gone/data/{}.html".format(title), "w+", encoding="utf-8"
     ) as f:
         f.writelines(source)
-    with open("/app/money_gone/data/index.html", "a", encoding="utf-8") as f:
+    with open("/app/money_gone/data/index.html", "w+", encoding="utf-8") as f:
         start, end = 0
         templates = f.readlines()
         for i, data in enumerate(templates):
@@ -19,3 +19,4 @@ def export_html(plot, title):
                 start = i
                 status = True
         templates[start:end] = source
+        f.writelines(templates)

@@ -6,8 +6,8 @@ WORKDIR /app/money_gone
 
 RUN mkdir -p /app/money_gone/data
 
-COPY . /app/money_gone/
+COPY . /app/money_gone/data
 
-RUN pip install -r ./requirements.txt
+RUN pip install -r /app/money_gone/data/requirements.txt
 
-RUN python3 /app/money_gone/main.py
+RUN python3 /app/money_gone/data/main.py 
