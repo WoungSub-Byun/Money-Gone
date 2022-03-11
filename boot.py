@@ -62,6 +62,3 @@ def boot():
     monthly_ratio_by_category(df)
     number_by_category(df)
     ratio_by_category(df)
-
-
-boot()
