@@ -9,8 +9,11 @@ on:
 jobs:
 
   build:
+    
     runs-on: ubuntu-latest
+    
     steps:
+
     - name: Copy Secret
       env:
         CONFIG_SECRET: ${{ secrets.CONFIGS }}
@@ -18,8 +21,18 @@ jobs:
         CONFIG_SECRET_FILE_NAME: config.ini
       run: echo $COFNIG_SECRET | base64 --decode > $CONFIG_SECRET_DIR/$CONFIG_SECRET_FILE_NAME
     
-    - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bus3013/money-gone
-    - name: Push docker image on Dockerhub
-      run: docker push bus3013/money-gone
+    - name: Login to Docker Hub
+      uses: docker/login-action
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME}}
+        password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+    
+    - name: Docker image Build and Push
+    - uses: docker/build-push-action@v2
+    - id: docker_build
+      with:
+        context: .
+        file: ./Dockerfile
+        push: true
+        tags: |
+          ${{ secrets.DOCKER_HUB_USERNAME }}/money_gone:latest
