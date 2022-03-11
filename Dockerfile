@@ -10,4 +10,4 @@ COPY . /money_gone/
 
 RUN pip install -r /money_gone/requirements.txt
 
-RUN python3 main.py
+CMD ["python3", "/money_gone/main.py"]
