@@ -6,7 +6,7 @@ files:
     destination: /home/ec2-user/
 hooks:
   BeforeInstall:
-    - location: ./scripts/remove_container
+    - location: ./scripts/remove_container.sh
       timeout: 300
       runas: root
   Install:
