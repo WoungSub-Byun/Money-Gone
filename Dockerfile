@@ -1,13 +1,13 @@
 FROM python:3.9.10
 
-RUN mkdir -p /app/money_gone
+RUN mkdir -p /money_gone
 
-WORKDIR /app/money_gone
+WORKDIR /money_gone
 
-RUN mkdir -p /app/money_gone_data
+RUN mkdir -p /money_gone_data
 
-COPY . /app/money_gone/
+COPY . /money_gone/
 
-RUN pip install -r /app/money_gone/requirements.txt
+RUN pip install -r /money_gone/requirements.txt
 
 RUN python3 main.py
