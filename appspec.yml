@@ -5,6 +5,10 @@ files:
   - source: .
     destination: /home/ec2-user/
 hooks:
+  BeforeInstall:
+    - location: ./scripts/remove_container
+      timeout: 300
+      runas: root
   Install:
     - location: ./scripts/load_image.sh
       runas: root
