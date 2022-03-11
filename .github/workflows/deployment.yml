@@ -20,6 +20,6 @@ jobs:
     
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bus3013/money-gone:$(date +%s)
+      run: docker build . --file Dockerfile --tag bus3013/money-gone
     - name: Push docker image on Dockerhub
-      run: docker push bus3013/money-gone:$(date +%s)
+      run: docker push bus3013/money-gone
