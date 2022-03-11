@@ -43,7 +43,7 @@ def load_dataset():
     return df
 
 
-def boot():
+def load_data():
     # matplotlib 한글 폰트 적용
     plt.rc("font", family="NanumBarunGothic")
 

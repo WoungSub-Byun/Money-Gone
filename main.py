@@ -1,10 +1,12 @@
 from flask import Flask, render_template
-from .boot import boot
+import load_data
+
 app = Flask(__name__)
+
 
 @app.route("/index", methods=["GET"])
 def show_tables():
-    boot()
+    load_data.load_data()
     path = "/app/money_gone/data"
     return render_template("/app/money_gone/data/index.html")
 
