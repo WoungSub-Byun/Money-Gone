@@ -6,8 +6,8 @@ files:
     destination: /home/ec2-user/
 hooks:
   Install:
-    - location: ./scripts/load_image
+    - location: ./scripts/load_image.sh
       runas: root
   ApplicationStart:
-    - location: ./scripts/run_container
+    - location: ./scripts/run_container.sh
       runas: root
