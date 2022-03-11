@@ -12,6 +12,14 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    - name: Copy Secret
+      env:
+        CONFIG_SECRET: ${{ secrets.CONFIGS }}
+        CONFIG_SECRET_DIR: ./
+        CONFIG_SECRET_FILE_NAME: config.ini
+      run: echo $COFNIG_SECRET | base64 --decode > $CONFIG_SECRET_DIR/$CONFIG_SECRET_FILE_NAME
+
+
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
