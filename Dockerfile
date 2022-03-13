@@ -4,7 +4,7 @@ RUN mkdir -p /money_gone
 
 WORKDIR /money_gone
 
-RUN mkdir -p /money_gone_data
+RUN mkdir -p /money_gone/data
 
 COPY . /money_gone/
 
