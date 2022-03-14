@@ -6,7 +6,7 @@ import load_data
 app = Flask(__name__)
 
 
-@app.route("/", methods=["GET"])
+@app.route("/index", methods=["GET"])
 def show_tables():
     start_at = time.time()
     load_data.load_data()
@@ -16,7 +16,7 @@ def show_tables():
             start_at, end_at, end_at - start_at
         )
     )
-    data_dir = "/app/money_gone/data/"
+    data_dir = "/money_gone/data/"
     return render_template("{}index.html".format(data_dir))
 
 
