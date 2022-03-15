@@ -17,13 +17,12 @@ import os
 
 
 def load_dataset():
-    config = configparser.ConfigParser()
-    config.read("./config.ini", encoding="utf-8")
-    config.sections()
+    # config = configparser.ConfigParser()
+    # config.read("./config.ini", encoding="utf-8")
 
     google_path = "https://drive.google.com/uc?id="
-    file_id = config["file"]["id"]
-    output_name = config["file"]["name"]
+    file_id = "1jCjpni5onM8DThulWYKx4UIvKHi1Aqf3"
+    output_name = "accountbook.xlsx"
 
     gdown.download(google_path + file_id, output_name, quiet=True)
 
