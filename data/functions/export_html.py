@@ -6,10 +6,11 @@ def export_html(plot, title):
     source = mpld3.fig_to_html(plot, figid="{}_id".format(title))
     with open("/data/{}.html".format(title), "w+", encoding="utf-8") as f:
         f.writelines(source)
-    with open("/data/index.html", "w+", encoding="utf-8") as f:
+    with open("/data/index.html", "r", encoding="utf-8") as fr:
         start = 0
         end = 0
-        templates = f.readlines()
+        status = False
+        templates = fr.readlines()
         for i, data in enumerate(templates):
             if status and ("_id" in data):
                 end = i
@@ -17,5 +18,6 @@ def export_html(plot, title):
             if title + "_id" in data:
                 start = i
                 status = True
+    with open("/data/index.html", "w+", encoding="utf-8") as fw:
         templates[start:end] = source
-        f.writelines(templates)
+        fw.writelines(templates)
