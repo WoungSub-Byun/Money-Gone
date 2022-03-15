@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/index", methods=["GET"])
 def show_tables():
-    return render_template("/money_gone/templates/index.html")
+    return render_template("index.html")
 
 
 if __name__ == "__main__":
