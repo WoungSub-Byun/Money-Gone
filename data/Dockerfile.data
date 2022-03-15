@@ -8,4 +8,4 @@ COPY . /money_gone
 
 RUN pip install -r /money_gone/requirements.txt
 
-CMD ["python3", "/money_gone_data/load_data.py"]
+CMD ["python3", "/money_gone/load_data.py"]
