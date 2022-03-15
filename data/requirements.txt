@@ -8,8 +8,11 @@ filelock==3.6.0
 fonttools==4.30.0
 gdown==4.4.0
 idna==3.3
+Jinja2==3.0.3
 kiwisolver==1.4.0
+MarkupSafe==2.1.1
 matplotlib==3.5.1
+mpld3==0.5.7
 numpy==1.22.3
 openpyxl==3.0.9
 packaging==21.3
