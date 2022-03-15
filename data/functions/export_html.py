@@ -7,7 +7,8 @@ def export_html(plot, title):
     with open("/data/{}.html".format(title), "w+", encoding="utf-8") as f:
         f.writelines(source)
     with open("/data/index.html", "w+", encoding="utf-8") as f:
-        start, end = 0
+        start = 0
+        end = 0
         templates = f.readlines()
         for i, data in enumerate(templates):
             if status and ("_id" in data):
