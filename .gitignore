@@ -156,7 +156,6 @@ dmypy.json
 cython_debug/
 
 .vscode
-*.ini
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
