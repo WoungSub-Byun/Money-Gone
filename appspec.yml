@@ -6,12 +6,12 @@ files:
     destination: /home/ec2-user/
 hooks:
   BeforeInstall:
-    - location: ./scripts/remove_container.sh
+    - location: ./scripts/reset_env.sh
       timeout: 300
       runas: root
   Install:
-    - location: ./scripts/load_image.sh
+    - location: ./scripts/set_env.sh
       runas: root
   ApplicationStart:
-    - location: ./scripts/run_container.sh
+    - location: ./scripts/start_app.sh
       runas: root
