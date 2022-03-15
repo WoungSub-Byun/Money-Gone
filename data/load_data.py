@@ -62,3 +62,6 @@ def load_data():
     monthly_ratio_by_category(df)
     number_by_category(df)
     ratio_by_category(df)
+
+
+load_data()
