@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 from functions import *
-from functions.export_html import export_html
-import os
 
 # 한글 폰트 설치
 # !sudo apt-get install -y fonts-nanum
