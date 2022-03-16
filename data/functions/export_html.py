@@ -16,7 +16,7 @@ def export_html(plot, title):
             for i, data in enumerate(templates):
                 if status and ("_id" in data):
                     end = i
-                    continue
+                    break
                 if title + "_id" in data:
                     start = i
                     status = True
