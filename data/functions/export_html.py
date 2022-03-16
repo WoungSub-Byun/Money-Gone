@@ -1,3 +1,4 @@
+from re import template
 import mpld3
 
 
@@ -5,6 +6,7 @@ def export_html(plot, title):
     title = title[10:]
     source = mpld3.fig_to_html(plot, figid="{}_id".format(title))
     is_initial = False
+    is_plot_included = False
     with open("/data/{}.html".format(title), "w+", encoding="utf-8") as f:
         f.writelines(source)
     try:
@@ -15,6 +17,7 @@ def export_html(plot, title):
             templates = fr.readlines()
             for i, data in enumerate(templates):
                 if status and ("_id" in data):
+                    is_plot_included = True
                     end = i
                     break
                 if title + "_id" in data:
@@ -26,6 +29,9 @@ def export_html(plot, title):
     with open("/data/index.html", "w+", encoding="utf-8") as fw:
         if is_initial:
             fw.writelines(source)
-        else:
+        elif is_plot_included:
             templates[start : end - 1] = source
+            fw.writelines(templates)
+        else:
+            templates.append(source)
             fw.writelines(templates)
